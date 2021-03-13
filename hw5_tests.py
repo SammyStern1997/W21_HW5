@@ -1,3 +1,12 @@
+######################
+# Name: Samuel Stern
+# Uniqname: sternsam
+######################
+
+
+
+
+
 import unittest
 import hw5_cards
 
@@ -34,8 +43,10 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        pass
-        #return X, Y
+        c1 = hw5_cards.Card(rank=12)
+        q = (c1.rank_name, "Queen")
+ 
+        return q
     
     def test_q2(self):
         '''
@@ -49,8 +60,9 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        pass
-        #return X, Y    
+        c1 = hw5_cards.Card(suit=1)
+        ans = (c1.suit_name, "Clubs")
+        return ans
     
 
     def test_q3(self):
@@ -66,8 +78,9 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        pass
-        #return X, Y
+        c1 = hw5_cards.Card(suit=3, rank=13)
+        ans = (str(c1), "King of Spades")
+        return ans
     
     def test_q4(self):
         '''
@@ -81,8 +94,9 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        pass
-        #return X, Y  
+        d1 = hw5_cards.Deck()
+        ans = (len(d1.cards), 52)
+        return ans
 
     def test_q5(self):
         '''
@@ -96,8 +110,10 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        pass
-        #return X, Y
+        d1 = hw5_cards.Deck()
+        c1 = hw5_cards.Card()
+        ans = (d1.deal_card(), hw5_cards.Card)
+        return ans
     
     def test_q6(self):
         '''
@@ -112,9 +128,12 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        pass
-        #return X, Y    
-    
+        d1 = hw5_cards.Deck()
+        ans1 = len(d1.cards)
+        d1.deal_card()
+        ans2 = len(d1.cards)
+        ans3 = (ans1-1, ans2)
+        return ans3
 
     def test_q7(self):
         '''
@@ -129,8 +148,13 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        pass
-        #return X, Y
+        d1 = hw5_cards.Deck()
+        c1 = d1.deal_card()
+        length1 = len(d1.cards)
+        d1.replace_card(c1)
+        length2 = len(d1.cards)
+        ans = (length1+1, length2, 52)
+        return ans
     
     def test_q8(self):
         '''
@@ -145,8 +169,13 @@ class TestCard(unittest.TestCase):
         ### please note: normally unit test methods do not have return statements. But returning will allow for unit testing of your unit test, and allow you to check your answer with the autograder.  This is optional today.
 
         '''
-        pass
-        #return X, Y  
+        d1 = hw5_cards.Deck()
+        c1 = hw5_cards.Card()
+        length1 = len(d1.cards)
+        d1.replace_card(c1)
+        length2 = len(d1.cards)
+        ans = (length1, length2)
+        return ans
 
 
 
